@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">QL_CANTIN</string>
+    <string name="btncreate" />
+    <string name="btndelete" />
+    <string name="btnInsert" />
+    <string name="login" />
+</resources>

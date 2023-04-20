@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/them"
+            android:icon="@drawable/them"
+            android:title="Thêm"/>
+        <item
+            android:id="@+id/sua"
+            android:icon="@drawable/sua"
+            android:title="Sửa"/>
+        <item
+            android:id="@+id/xoa"
+            android:icon="@drawable/xoa"
+            android:title="Xóa"/>
+
+</menu>
