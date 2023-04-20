@@ -18,7 +18,7 @@
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/th_ng_tin_nh_n_vi_n"
+            android:text="Sản Phẩm"
             android:textColor="#2f3363"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mã Nhân Viên"
+                android:text="Mã Sản Phẩm"
                 android:textColor="#2f3363"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -38,7 +38,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập mã nhân viên "
+                android:hint="Nhập mã sản phẩm "
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" />
         </TableRow >
@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Họ Tên"
+                android:text="Tên Sản Phẩm"
                 android:textColor="#2f3363"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -57,47 +57,14 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập họ tên"
+                android:hint="Nhập tên sản phẩm"
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" /></TableRow>
         <TableRow android:layout_marginTop="8dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Giới Tính"
-                android:textColor="#2f3363"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-            <RadioGroup
-                android:id="@+id/rdgGioiTinh"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:ignore="ExtraText">\
-                <RadioButton
-                    android:id="@+id/rdtNam"
-                    android:text="Nam"
-                    android:textColor="#A2A4B5"
-                    android:checked="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:id="@+id/rdtNu"
-                    android:text="Nữ"
-                    android:textColor="#A2A4B5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-
-            </RadioGroup>
-
-        </TableRow>
-
-        <TableRow android:layout_marginTop="8dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ngày Sinh"
+                android:text="Đơn Vị Tính"
                 android:textColor="#2f3363"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -107,7 +74,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập ngày sinh"
+                android:hint="Đơn vị tính"
                 android:inputType="date"
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" /></TableRow>
@@ -115,7 +82,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Địa Chỉ"
+                android:text="Đơn giá"
                 android:textColor="#2f3363"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -125,7 +92,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập địa chỉ"
+                android:hint="Nhập đơn giá"
                 android:maxLength="2"
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" />
@@ -134,7 +101,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Số Điện Thoại"
+                android:text="Mã Loại"
                 android:textColor="#2f3363"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -144,29 +111,12 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập số điện thoại"
+                android:hint="Nhập mã loại"
                 android:inputType="number"
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" />
         </TableRow>
-        <TableRow android:layout_marginTop="8dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mật Khẩu"
-                android:textColor="#2f3363"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-            <EditText
-                android:id="@+id/edtMatKhau"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/edittext"
-                android:ems="10"
-                android:hint="Nhập mật khẩu"
-                android:textColor="#A2A4B5"
-                android:textSize="18sp" />
-        </TableRow>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnThemNV"
             style="@android:style/Widget.Button"
