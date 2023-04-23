@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Insert_Loai_San_Pham_Activity">
+    tools:context=".Update_Khu_Vuc_Activity">
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Loại Sản Phẩm"
+            android:text="Khu Vực"
             android:textColor="#2f3363"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -27,18 +27,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mã Loại"
+                android:text="Mã Khu"
                 android:textColor="#2f3363"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edtMaLoai"
+                android:id="@+id/edtMaNV"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập mã loại"
+                android:hint="Nhập mã khu"
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" />
         </TableRow >
@@ -46,23 +46,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tên Loại"
+                android:text="Tên Khu"
                 android:textColor="#2f3363"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edtTenLoai"
+                android:id="@+id/edtHoTen"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập tên loại"
+                android:hint="Nhập tên khu"
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" /></TableRow>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnThemLSP"
+            android:id="@+id/btnThem"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="55dp"
@@ -73,6 +73,6 @@
             android:layout_marginTop="18dp"
             android:textColor="#ffffff"
             android:background="@drawable/background"
-            android:text="Thêm"/>
+            android:text="Cập Nhật"/>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

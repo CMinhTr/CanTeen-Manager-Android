@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,22 +15,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnDangNhap = (Button) findViewById(R.id.button);
-        Button btnDangKy = (Button) findViewById(R.id.button2);
 
-        btnDangNhap.setOnClickListener(new View.OnClickListener() {
+        Button btnhanvien = (Button) findViewById(R.id.btnhanvien);
+        Intent call = getIntent();
+        Bundle Package = call.getBundleExtra("Mã Nhân Viên");
+        String maNV = Package.getString("MaNV");
+        TextView txtMaNV = (TextView) findViewById(R.id.txtMaNV);
+        txtMaNV.setText(maNV);
+        btnhanvien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentDN = new Intent(MainActivity.this,DangNhapActivity.class);
-                startActivity(intentDN);
-            }
-        });
 
-        btnDangKy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentDK = new Intent(MainActivity.this,DangKyActivity.class);
-                startActivity(intentDK);
+                Intent intent = new Intent(MainActivity.this,NhanVienActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("MaNV",maNV);
+                intent.putExtra("Mã Nhân Viên",bundle);
+                startActivity(intent);
             }
         });
 

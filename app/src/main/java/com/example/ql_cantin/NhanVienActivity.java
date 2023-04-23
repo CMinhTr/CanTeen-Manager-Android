@@ -1,5 +1,6 @@
 package com.example.ql_cantin;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -31,19 +33,13 @@ public class NhanVienActivity extends AppCompatActivity {
 
         listNV = (ListView) findViewById(R.id.listNV);
         hienthilistNV();
+        registerForContextMenu(listNV);
 
-        listNV.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-            libNhanVien nv =(libNhanVien)list.get(i);
-
-
-
-                return false;
-            }
-        });
-
-
+//        Intent call = getIntent();
+//        Bundle Package = call.getBundleExtra("Mã Nhân Viên");
+//        String maNV = Package.getString("MaNV");
+//        TextView txtMaNV = (TextView) findViewById(R.id.txtMaNV);
+//        txtMaNV.setText(maNV);
 
 
     }
@@ -74,7 +70,7 @@ public class NhanVienActivity extends AppCompatActivity {
         Cursor cursor = database.rawQuery(sql,null);
         if(cursor.moveToFirst()){
             do {
-                    list.add(new libNhanVien(cursor.getString(0),cursor.getString(1),cursor.getString(2)));
+                    list.add(new libNhanVien(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(6)));
             }while (cursor.moveToNext());
 
 
@@ -82,30 +78,58 @@ public class NhanVienActivity extends AppCompatActivity {
         database.close();
     }
 
-        public boolean onCreateOptionsMenu(Menu menu) {
-            MenuInflater inflater = getMenuInflater();
-            inflater.inflate(R.menu.insert_update_delete_menu, menu);
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.insert_update_delete_menu, menu);
+    }
 
-            return true;
-        }
-        public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-            Intent intent;
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        Intent intent;
         switch (item.getItemId()) {
             case R.id.them:
-                intent = new Intent(NhanVienActivity.this,Insert_NhanVien_Activity.class);
+                intent = new Intent(NhanVienActivity.this, Insert_NhanVien_Activity.class);
                 startActivity(intent);
-            return true; case R.id.sua:
-                intent = new Intent(NhanVienActivity.this,Update_NhanVien_Activity.class);
-            startActivity(intent);
-            return true;
+                return true;
+            case R.id.sua:
 
-
-
+                libNhanVien nhanVien =(libNhanVien) list.get(0);
+                String getMa = nhanVien.maNV;
+                intent = new Intent(NhanVienActivity.this, Update_NhanVien_Activity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("MaNV",getMa);
+                intent.putExtra("Mã Nhân Viên",bundle);
+                startActivity(intent);
+                return true;
             case R.id.xoa:
             default:
-                return super.onOptionsItemSelected(item);
+                return super.onContextItemSelected(item);
         }
     }
+    //    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.insert_update_delete_menu, menu);
+//
+//        return true;
+//    }
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle item selection
+//            Intent intent;
+////        switch (item.getItemId()) {
+////            case R.id.them:
+////                intent = new Intent(NhanVienActivity.this,Insert_NhanVien_Activity.class);
+////                startActivity(intent);
+////            return true; case R.id.sua:
+////                intent = new Intent(NhanVienActivity.this,Update_NhanVien_Activity.class);
+////            startActivity(intent);
+////            return true;
+////            case R.id.xoa:
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//
+//    }
 
 }

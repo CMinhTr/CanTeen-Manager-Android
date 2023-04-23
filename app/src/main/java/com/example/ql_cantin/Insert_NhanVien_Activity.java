@@ -16,7 +16,7 @@ public class Insert_NhanVien_Activity extends AppCompatActivity {
     String nameDB = "QL_CANTIN.db";
     SQLiteDatabase database;
     EditText edtMaNV,edtHoTen,edtNgaySinh,edtDiaChi,edtSDT,edtMatKhau;
-    RadioButton rdtNam,rdtNu,rdtGioiTinh;
+    RadioButton rdtGioiTinh,rdtPhanQuyen;
     Button btnThemNV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +50,18 @@ public class Insert_NhanVien_Activity extends AppCompatActivity {
         String SDT = edtSDT.getText().toString();
         String MatKhau = edtMatKhau.getText().toString();
         RadioGroup rdgGioiTinh =(RadioGroup) findViewById(R.id.rdgGioiTinh);
-        int idCheck = rdgGioiTinh.getCheckedRadioButtonId();
-        rdtGioiTinh = findViewById(idCheck);
+        RadioGroup rdgPhanQuyen =(RadioGroup) findViewById(R.id.rdgPhanQuyen);
+
+        int idCheckGT = rdgGioiTinh.getCheckedRadioButtonId();
+        rdtGioiTinh = findViewById(idCheckGT);
+        int idCheckPQ = rdgPhanQuyen.getCheckedRadioButtonId();
+        rdtPhanQuyen = findViewById(idCheckPQ);
         String GioiTinh = rdtGioiTinh.getText().toString();
+        String PhanQuyen = rdtPhanQuyen.getText().toString();
+
         edtMatKhau.setText(GioiTinh);
 
-        String sql = "INSERT INTO NHANVIEN VALUES('"+MaNV+"','"+HoTen+"','"+GioiTinh+"','"+NgaySinh+"','"+DiaChi+"','"+SDT+"','"+MatKhau+"')";
+        String sql = "INSERT INTO NHANVIEN VALUES('"+MaNV+"','"+HoTen+"','"+GioiTinh+"','"+NgaySinh+"','"+DiaChi+"','"+SDT+"','"+MatKhau+"','"+PhanQuyen+"')";
         if(doAction(sql)==true)
         {
 

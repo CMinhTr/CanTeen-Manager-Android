@@ -127,7 +127,6 @@
             android:background="@drawable/edittext"
             android:ems="10"
             android:hint="Nhập địa chỉ"
-            android:maxLength="2"
             android:textColor="#A2A4B5"
             android:textSize="18sp" />
     </TableRow>
@@ -168,6 +167,36 @@
             android:textColor="#A2A4B5"
             android:textSize="18sp" />
       </TableRow>
+        <TableRow android:layout_marginTop="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phân Quyền"
+                android:textColor="#2f3363"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <RadioGroup
+                android:id="@+id/rdgPhanQuyen"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="ExtraText">
+                <RadioButton
+                    android:id="@+id/rdtAdmin"
+                    android:text="Admin"
+                    android:textColor="#A2A4B5"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/rdtNV"
+                    android:text="nhanvien"
+                    android:checked="true"
+                    android:textColor="#A2A4B5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+        </TableRow>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnThemNV"
             style="@android:style/Widget.Button"

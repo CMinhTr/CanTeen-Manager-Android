@@ -12,6 +12,21 @@
         android:theme="@style/Theme.QL_CANTIN"
         tools:targetApi="31">
         <activity
+            android:name=".Update_Ban_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Insert_Ban_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Update_Khu_Vuc_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Insert_Khu_Vuc_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Insert_Loai_San_Pham_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Insert_San_Pham_Activity"
             android:exported="false" />
         <activity
@@ -24,21 +39,20 @@
             android:name=".Update_NhanVien_Activity"
             android:exported="false" />
         <activity
-            android:name=".NhanVienActivity"
+            android:name=".MainActivity"
             android:exported="false" />
+
         <activity
             android:name=".Insert_NhanVien_Activity"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".CSDLActivity" -->
-        <!-- android:exported="false" /> -->
-        <activity
-            android:name=".MenuActivity"
             android:exported="false" />
         <activity
             android:name=".DangNhapActivity"
             android:exported="false" />
         <activity
             android:name=".DangKyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NhanVienActivity"
             android:exported="false" />
         <activity
             android:name=".CSDLActivity"
@@ -50,5 +64,5 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 </manifest>

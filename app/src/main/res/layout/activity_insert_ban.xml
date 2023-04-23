@@ -33,7 +33,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edtMaNV"
+                android:id="@+id/edtMaBan"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
@@ -52,7 +52,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edtHoTen"
+                android:id="@+id/edtTenBan"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
