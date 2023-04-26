@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button btnhanvien = (Button) findViewById(R.id.btnhanvien);
+        Button btnloaisanpham = (Button) findViewById(R.id.btnloaisanpham);
         Intent call = getIntent();
         Bundle Package = call.getBundleExtra("Mã Nhân Viên");
         String maNV = Package.getString("MaNV");
@@ -26,10 +27,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this,NhanVienActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("MaNV",maNV);
-                intent.putExtra("Mã Nhân Viên",bundle);
+                Intent intent = new Intent(MainActivity.this,Nhan_Vien_Activity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("MaNV",maNV);
+//                intent.putExtra("Mã Nhân Viên",bundle);
+                startActivity(intent);
+            }
+        });
+        btnloaisanpham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this,Loai_San_Pham_Activity.class);
                 startActivity(intent);
             }
         });

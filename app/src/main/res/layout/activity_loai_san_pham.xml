@@ -4,16 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoaiSanPhamActivity">
-    <LinearLayout
+    android:background="#EBEBEB"
+    tools:context=".Loai_San_Pham_Activity">
+    <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:stretchColumns="*">
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loại Sản Phẩm"
+            android:textColor="#2f3363"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        <TableRow
+            android:layout_marginTop="20dp">
 
-        <ListView
+            <EditText
+                android:id="@+id/edtMaLoai"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:hint="Nhập mã loại "
+                android:textColor="#A2A4B5"
+                android:textSize="18sp" />
+
+        </TableRow >
+
+
+
+        <TableRow android:layout_marginTop="8dp">
+            <EditText
+                android:id="@+id/edtTenLoai"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:hint="Nhập tên loại"
+                android:textColor="#A2A4B5"
+                android:textSize="18sp" />
+
+
+        </TableRow>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/listLoaiSP">
-        </ListView>
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnThem"
+                style="@android:style/Widget.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background"
+                android:text="Thêm"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSua"
+                style="@android:style/Widget.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:background="@drawable/background"
+                android:text="Sửa"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnXoa"
+                style="@android:style/Widget.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:background="@drawable/background"
+                android:text="Xóa"/>
+        </LinearLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listLSP"/>
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

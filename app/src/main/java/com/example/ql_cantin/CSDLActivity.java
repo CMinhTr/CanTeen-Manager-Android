@@ -78,7 +78,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblNhapHang()
     {
-        String sql = "CREATE TABLE NHAPHANG(MANH NVARCHAR(10) PRIMARY KEY NOT NULL,NGAYNHAP DATETIME,MANCC NVARCHAR(10),MANV NVARCHAR(10),FOREIGN KEY(MANCC) REFERENCES NHACUNGCAP (MANCC),FOREIGN KEY(MANV)REFERENCES NHANVIEN(MANV))";
+        String sql = "CREATE TABLE NHAPHANG(MANH TEXT PRIMARY KEY,NGAYNHAP DATETIME,MANCC TEXT,MANV TEXT,FOREIGN KEY(MANCC) REFERENCES NHACUNGCAP (MANCC),FOREIGN KEY(MANV)REFERENCES NHANVIEN(MANV))";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Nhập Hàng thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -88,7 +88,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblChitietNhapHang()
     {
-        String sql = "CREATE TABLE CHITIETNHAPHANG(MANH  NVARCHAR(10) PRIMARY KEY NOT NULL,MASP INT NOT NULL,SOLUONG INT,GIANHAP FLOAT,FOREIGN KEY(MANH) REFERENCES NHAPHANG (MANH),FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP))";
+        String sql = "CREATE TABLE CHITIETNHAPHANG(MANH  TEXT PRIMARY KEY ,MASP TEXT,SOLUONG INT,GIANHAP FLOAT,FOREIGN KEY(MANH) REFERENCES NHAPHANG (MANH),FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP))";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Chi Tiết Nhập Hàng thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -98,7 +98,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblHoaDon()
     {
-        String sql = "CREATE TABLE HOADONBH(MAHD  NVARCHAR(10) PRIMARY KEY NOT NULL,NGAYBH DATETIME,MABAN NVARCHAR(10),MANV NVARCHAR(10),FOREIGN KEY (MABAN) REFERENCES BAN(MABAN),FOREIGN KEY(MANV)REFERENCES NHANVIEN(MANV))";
+        String sql = "CREATE TABLE HOADONBH(MAHD  TEXT PRIMARY KEY ,NGAYBH DATETIME,MABAN TEXT,MANV TEXT,FOREIGN KEY (MABAN) REFERENCES BAN(MABAN),FOREIGN KEY(MANV)REFERENCES NHANVIEN(MANV))";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Hóa Đơn thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -108,7 +108,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblChitietHD()
     {
-        String sql = "CREATE TABLE CHITIETBANHANG(MAHD  NVARCHAR(10) NOT NULL,MASP INT NOT NULL,SOLUONG INT,GIABAN FLOAT, PRIMARY KEY (MAHD,MASP),FOREIGN KEY(MAHD) REFERENCES HOADONBH (MAHD),FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP))";
+        String sql = "CREATE TABLE CHITIETBANHANG(MAHD  TEXT,MASP TEXT,SOLUONG INT,GIABAN FLOAT, PRIMARY KEY (MAHD,MASP),FOREIGN KEY(MAHD) REFERENCES HOADONBH (MAHD),FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP))";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Chi Tiết Hóa Đơn thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -118,7 +118,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblLSP()
     {
-        String sql = "CREATE TABLE LOAISANPHAM(MALOAI NVARCHAR(10) PRIMARY KEY NOT NULL,TENLOAI NVARCHAR(50) NOT NULL)";
+        String sql = "CREATE TABLE LOAISANPHAM(MALOAI TEXT PRIMARY KEY,TENLOAI TEXT)";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Loại Sản Phẩm thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -128,7 +128,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblKV()
     {
-        String sql = "CREATE TABLE KHUVUC(MAKV NVARCHAR(10) PRIMARY KEY NOT NULL,TENKV NVARCHAR(20) NOT NULL)";
+        String sql = "CREATE TABLE KHUVUC(MAKV TEXT PRIMARY KEY,TENKV TEXT )";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Khu Vực thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -138,7 +138,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblBan()
     {
-        String sql = "CREATE TABLE BAN(MABAN NVARCHAR(10) PRIMARY KEY NOT NULL,TENBAN NVARCHAR(20) NOT NULL,MAKV NVARCHAR(10),FOREIGN KEY (MAKV) REFERENCES KHUVUC (MAKV) )";
+        String sql = "CREATE TABLE BAN(MABAN TEXT PRIMARY KEY,TENBAN TEXT,MAKV TEXT,FOREIGN KEY (MAKV) REFERENCES KHUVUC (MAKV) )";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Bàn thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -148,7 +148,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblSP()
     {
-        String sql = "CREATE TABLE SANPHAM(MASP  NVARCHAR(10) PRIMARY KEY NOT NULL,TENSP NVARCHAR(20) NOT NULL,DONVITINH NVARCHAR(10),DONGIA INT,MALOAI INT, FOREIGN KEY (MALOAI) REFERENCES LOAISANPHAM(MALOAI))";
+        String sql = "CREATE TABLE SANPHAM(MASP  TEXT PRIMARY KEY  ,TENSP TEXT,DONVITINH TEXT,DONGIA NUMBER,MALOAI NUMBER, FOREIGN KEY (MALOAI) REFERENCES LOAISANPHAM(MALOAI))";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Sản Phẩm thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -158,7 +158,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblNCC()
     {
-        String sql = "CREATE TABLE NHACUNGCAP(MANCC NVARCHAR(10) PRIMARY KEY NOT NULL,TENNCC NVARCHAR (20) NOT NULL,SDT NVARCHAR(10) )";
+        String sql = "CREATE TABLE NHACUNGCAP(MANCC TEXT PRIMARY KEY ,TENNCC TEXTL,SDT TEXT )";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Nhà Cung Cấp thành công!!!",Toast.LENGTH_SHORT).show();
         }
