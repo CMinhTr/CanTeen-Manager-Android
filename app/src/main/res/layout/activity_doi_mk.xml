@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EBEBEB"
-    tools:context=".DangKyActivity">
+    tools:context=".DoiMKActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -28,7 +28,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Đăng Ký"
+        android:text="Đổi Mật Khẩu"
         android:layout_marginStart="32dp"
         android:textColor="#ffffff"
         android:textAlignment="center"
@@ -56,13 +56,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
-            android:text="Email"
+            android:text="Mã "
             android:textColor="#2f3363"
             android:textSize="18dp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/ediEmail"
+            android:id="@+id/edtMaNV"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -70,7 +70,7 @@
             android:layout_marginEnd="32dp"
             android:background="@drawable/edittext"
             android:ems="10"
-            android:hint="Nhập Email của bạn"
+            android:hint="Nhập mã của bạn"
             android:padding="8dp"
             android:textColor="#A2A4B5"
             android:textSize="16sp" />
@@ -98,28 +98,7 @@
             android:padding="8dp"
             android:textColor="#A2A4B5"
             android:textSize="16sp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="10dp"
-            android:text="Nhập Lại Mật Khẩu"
-            android:textColor="#2f3363"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-        <EditText
-            android:id="@+id/edtNhapLaiMatKhau"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/edittext"
-            android:ems="10"
-            android:hint="Nhập lại mật khẩu"
-            android:padding="8dp"
-            android:textColor="#A2A4B5"
-            android:textSize="16sp" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDangKy"
             style="@android:style/Widget.Button"
@@ -132,7 +111,7 @@
             android:layout_marginTop="18dp"
             android:textColor="#ffffff"
             android:background="@drawable/background"
-            android:text="Đăng ký"/>
+            android:text="Đổi mật khẩu"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLKDangNhap"
             style="@android:style/Widget.Button"
@@ -145,7 +124,7 @@
             android:layout_marginTop="18dp"
             android:textColor="#ffffff"
             android:background="@drawable/background"
-            android:text="Đã có tài khoản? Đăng nhập"/>
+            android:text="Đăng nhập"/>
     </LinearLayout>
 
 

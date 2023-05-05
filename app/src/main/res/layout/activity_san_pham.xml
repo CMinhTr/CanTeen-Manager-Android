@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EBEBEB"
-    tools:context=".Nhan_Vien_Activity">
+    tools:context=".San_Pham_Activity">
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:stretchColumns="*">
         <Toolbar
             android:layout_width="match_parent"
@@ -20,7 +21,7 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nhân Viên"
+                android:text="Sản Phẩm"
                 android:textColor="#2f3363"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -29,151 +30,94 @@
             android:layout_marginTop="20dp">
 
             <EditText
-                android:id="@+id/edtMaNV"
+                android:id="@+id/edtMaSP"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập mã NV"
+                android:hint="Nhập mã sản phẩm "
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" />
-            <EditText
-                android:id="@+id/edtHoTen"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/edittext"
-                android:ems="10"
-                android:hint="Nhập họ tên"
-                android:textColor="#A2A4B5"
-                android:textSize="18sp" />
+
         </TableRow >
-
-        <TableRow android:layout_marginTop="8dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Giới Tính"
-                android:textColor="#2f3363"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-            <RadioGroup
-                android:id="@+id/rdgGioiTinh"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:ignore="ExtraText">\
-                <RadioButton
-                    android:id="@+id/rdtNam"
-                    android:text="Nam"
-                    android:textColor="#A2A4B5"
-                    android:checked="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:id="@+id/rdtNu"
-                    android:text="Nữ"
-                    android:textColor="#A2A4B5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-
-            </RadioGroup>
-
-        </TableRow>
-
         <TableRow android:layout_marginTop="8dp">
             <EditText
-                android:id="@+id/edtNgaySinh"
+                android:id="@+id/edtTenSP"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập ngày sinh"
-                android:inputType="date"
-                android:textColor="#A2A4B5"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/edtDiaChi"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/edittext"
-                android:ems="10"
-                android:hint="Nhập địa chỉ"
+                android:hint="Nhập tên sản phẩm"
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" />
         </TableRow>
-
         <TableRow android:layout_marginTop="8dp">
-
             <EditText
-                android:id="@+id/edtSDT"
+                android:id="@+id/edtDVT"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập số điện thoại"
+                android:hint="Nhập đơn vị tính"
+                android:textColor="#A2A4B5"
+                android:textSize="18sp" />
+        </TableRow>
+        <TableRow android:layout_marginTop="8dp">
+            <EditText
+                android:id="@+id/edtdonGia"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:hint="Nhập đơn giá"
                 android:inputType="number"
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" />
-            <EditText
-                android:id="@+id/edtMatKhau"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/edittext"
-                android:ems="10"
-                android:hint="Nhập mật khẩu"
-                android:textColor="#A2A4B5"
-                android:textSize="18sp" />
         </TableRow>
-
-        <TableRow android:layout_marginTop="8dp">
+        <LinearLayout
+            android:padding="15dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Phân Quyền"
-                android:textColor="#2f3363"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:textStyle="bold|normal"
+                android:layout_gravity="right"
+                android:textColor="#A2A4B5"
                 android:textSize="18sp"
-                android:textStyle="bold" />
-            <RadioGroup
-                android:id="@+id/rdgPhanQuyen"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:ignore="ExtraText">
-                <RadioButton
-                    android:id="@+id/rdtAdmin"
-                    android:text="Admin"
-                    android:textColor="#A2A4B5"
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:id="@+id/rdtNV"
-                    android:text="nhanvien"
-                    android:checked="true"
-                    android:textColor="#A2A4B5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </RadioGroup>
-        </TableRow>
+                android:text="Chọn Loại Sản Phẩm" />
+            <Spinner
+                android:textSize="25sp"
+                android:id="@+id/spnLSP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Null"
+                android:minHeight="48dp" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnThemNV"
+                android:id="@+id/btnThem"
                 style="@android:style/Widget.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="#ffffff"
                 android:background="@drawable/background"
-                android:text="Thêm"/>
+                android:text="Thêm"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSuaNV"
+                android:id="@+id/btnSua"
                 style="@android:style/Widget.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -184,7 +128,7 @@
                 android:text="Sửa"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnXoaNV"
+                android:id="@+id/btnXoa"
                 style="@android:style/Widget.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -197,9 +141,7 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/listNV"/>
-
+            android:id="@+id/listSP"/>
 
     </TableLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

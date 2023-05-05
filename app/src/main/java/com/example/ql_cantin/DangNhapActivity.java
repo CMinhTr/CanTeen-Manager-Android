@@ -23,8 +23,6 @@ public class DangNhapActivity extends AppCompatActivity {
         EditText edtMaNV = (EditText) findViewById(R.id.edtMaNV);
         EditText edtMatKhau = (EditText) findViewById(R.id.edtMatKhau);
 
-
-
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

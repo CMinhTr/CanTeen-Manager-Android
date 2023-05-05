@@ -78,7 +78,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblNhapHang()
     {
-        String sql = "CREATE TABLE NHAPHANG(MANH TEXT PRIMARY KEY,NGAYNHAP DATETIME,MANCC TEXT,MANV TEXT,FOREIGN KEY(MANCC) REFERENCES NHACUNGCAP (MANCC),FOREIGN KEY(MANV)REFERENCES NHANVIEN(MANV))";
+        String sql = "CREATE TABLE NHAPHANG(MANH TEXT PRIMARY KEY,NGAYNHAP TEXT,MANCC TEXT,MANV TEXT,FOREIGN KEY(MANCC) REFERENCES NHACUNGCAP (MANCC),FOREIGN KEY(MANV)REFERENCES NHANVIEN(MANV))";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Nhập Hàng thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -88,7 +88,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblChitietNhapHang()
     {
-        String sql = "CREATE TABLE CHITIETNHAPHANG(MANH  TEXT PRIMARY KEY ,MASP TEXT,SOLUONG INT,GIANHAP FLOAT,FOREIGN KEY(MANH) REFERENCES NHAPHANG (MANH),FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP))";
+        String sql = "CREATE TABLE CHITIETNHAPHANG(MANH  TEXT PRIMARY KEY ,MASP TEXT,SOLUONG NUMBER,GIANHAP NUMBER,FOREIGN KEY(MANH) REFERENCES NHAPHANG (MANH),FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP))";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Chi Tiết Nhập Hàng thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -98,7 +98,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblHoaDon()
     {
-        String sql = "CREATE TABLE HOADONBH(MAHD  TEXT PRIMARY KEY ,NGAYBH DATETIME,MABAN TEXT,MANV TEXT,FOREIGN KEY (MABAN) REFERENCES BAN(MABAN),FOREIGN KEY(MANV)REFERENCES NHANVIEN(MANV))";
+        String sql = "CREATE TABLE HOADONBH(MAHD  TEXT PRIMARY KEY ,NGAYBH TEXT,MABAN TEXT,MANV TEXT,FOREIGN KEY (MABAN) REFERENCES BAN(MABAN),FOREIGN KEY(MANV)REFERENCES NHANVIEN(MANV))";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Hóa Đơn thành công!!!",Toast.LENGTH_SHORT).show();
         }
@@ -108,7 +108,7 @@ public class CSDLActivity extends AppCompatActivity {
     }
     public void createTblChitietHD()
     {
-        String sql = "CREATE TABLE CHITIETBANHANG(MAHD  TEXT,MASP TEXT,SOLUONG INT,GIABAN FLOAT, PRIMARY KEY (MAHD,MASP),FOREIGN KEY(MAHD) REFERENCES HOADONBH (MAHD),FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP))";
+        String sql = "CREATE TABLE CHITIETBANHANG(MAHD  TEXT,MASP TEXT,SOLUONG NUMBER,GIABAN NUMBER, PRIMARY KEY (MAHD,MASP),FOREIGN KEY(MAHD) REFERENCES HOADONBH (MAHD),FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP))";
         if(doAction(sql)==true){
             Toast.makeText(CSDLActivity.this,"Tạo Table Chi Tiết Hóa Đơn thành công!!!",Toast.LENGTH_SHORT).show();
         }

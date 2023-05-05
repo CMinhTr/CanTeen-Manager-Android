@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EBEBEB"
-    tools:context=".Nha_Cung_Cap_Activity">
+    tools:context=".Khu_Vuc_Activity">
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
@@ -20,21 +20,22 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nhà Cung Cấp"
+                android:text="Khu Vực"
                 android:textColor="#2f3363"
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </Toolbar>
+
         <TableRow
             android:layout_marginTop="20dp">
 
             <EditText
-                android:id="@+id/edtMaNCC"
+                android:id="@+id/edtMaKhu"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập mã nhà cung cấp "
+                android:hint="Nhập mã khu "
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" />
 
@@ -44,25 +45,12 @@
 
         <TableRow android:layout_marginTop="8dp">
             <EditText
-                android:id="@+id/edtTenNCC"
+                android:id="@+id/edtTenKhu"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:hint="Nhập tên nhà cung cấp"
-                android:textColor="#A2A4B5"
-                android:textSize="18sp" />
-
-
-        </TableRow>
-        <TableRow android:layout_marginTop="8dp">
-            <EditText
-                android:id="@+id/edtsoDT"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/edittext"
-                android:ems="10"
-                android:hint="Nhập số điện thoại"
+                android:hint="Nhập tên khu"
                 android:textColor="#A2A4B5"
                 android:textSize="18sp" />
 
@@ -111,6 +99,6 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/listNCC"/>
+            android:id="@+id/listKV"/>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

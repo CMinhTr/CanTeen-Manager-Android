@@ -114,19 +114,6 @@
             android:textSize="22sp"
             android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnLKDangKy"
-            style="@android:style/Widget.Button"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/background"
-            android:text="Chưa có tài khoản? Đăng ký"
-            android:textColor="#ffffff"
-            android:textSize="15sp"
-            android:textStyle="bold" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,53 +11,50 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Nha_Cung_Cap_Activity extends AppCompatActivity {
+public class Khu_Vuc_Activity extends AppCompatActivity {
     String nameDB = "QL_CANTIN.db";
     SQLiteDatabase database;
-    ListView listNCC;
-    EditText edtMaNCC,edtTenNCC,edtsoDT;
-    String maNCC,tenNCC,soDT;
+    ListView listKV;
+    EditText edtMaKhu,edtTenKhu;
+    String maKhu,tenKhu;
     Button btnThem,btnSua,btnXoa;
     ArrayList list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nha_cung_cap);
-        edtMaNCC = (EditText) findViewById(R.id.edtMaNCC);
-        edtTenNCC = (EditText) findViewById(R.id.edtTenNCC);
-        edtsoDT = (EditText) findViewById(R.id.edtsoDT);
+        setContentView(R.layout.activity_khu_vuc);
+        edtMaKhu = (EditText) findViewById(R.id.edtMaKhu);
+        edtTenKhu = (EditText) findViewById(R.id.edtTenKhu);
         btnThem = (Button) findViewById(R.id.btnThem);
         btnSua = (Button) findViewById(R.id.btnSua);
         btnXoa = (Button) findViewById(R.id.btnXoa);
-        listNCC = (ListView) findViewById(R.id.listNCC);
-
+        listKV = (ListView) findViewById(R.id.listKV);
         hienThi();
-        listNCC.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listKV.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                libNhaCungCap nCC = (libNhaCungCap) list.get(i);
-                edtMaNCC.setText(nCC.maNCC);
-                edtTenNCC.setText(nCC.tenNCC);
-                edtsoDT.setText(nCC.soDT);
+                libKhuVuc khuVuc = (libKhuVuc) list.get(i);
+                edtMaKhu.setText(khuVuc.maKhu);
+                edtTenKhu.setText(khuVuc.tenKhu);
                 return false;
             }
         });
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                maNCC=edtMaNCC.getText().toString();
-                tenNCC=edtTenNCC.getText().toString();
-                soDT=edtsoDT.getText().toString();
-                String sql = "INSERT INTO NHACUNGCAP VALUES('"+maNCC+"','"+tenNCC+"','"+soDT+"')";
+                maKhu=edtMaKhu.getText().toString();
+                tenKhu=edtTenKhu.getText().toString();
+                String sql = "INSERT INTO KHUVUC VALUES('"+maKhu+"','"+tenKhu+"')";
                 if(doAction(sql)==true)
                 {
-                    Toast.makeText(Nha_Cung_Cap_Activity.this, "Thêm Nhà Cung Cấp Thành Công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Khu_Vuc_Activity.this, "Thêm Khu Vực Thành Công", Toast.LENGTH_SHORT).show();
                 }
-                else{Toast.makeText(Nha_Cung_Cap_Activity.this, "Không thể thêm Nhà Cung Cấp ", Toast.LENGTH_SHORT).show();
+                else{Toast.makeText(Khu_Vuc_Activity.this, "Không thể thêm Khu Vực ", Toast.LENGTH_SHORT).show();
                 }
                 hienThi();
                 Clear();
@@ -66,15 +63,14 @@ public class Nha_Cung_Cap_Activity extends AppCompatActivity {
         btnSua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                maNCC=edtMaNCC.getText().toString();
-                tenNCC=edtTenNCC.getText().toString();
-                soDT=edtsoDT.getText().toString();
-                String sql = "UPDATE NHACUNGCAP SET TENNCC = '"+tenNCC+"', SDT = '"+soDT+"' WHERE MANCC = '"+maNCC+"'";
+                maKhu=edtMaKhu.getText().toString();
+                tenKhu=edtTenKhu.getText().toString();
+                String sql = "UPDATE KHUVUC SET TENKV = '"+tenKhu+"'WHERE MAKV = '"+maKhu+"'";
                 if(doAction(sql)==true)
                 {
-                    Toast.makeText(Nha_Cung_Cap_Activity.this, "Cập Nhật Nhà Cung Cấp Thành Công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Khu_Vuc_Activity.this, "Cập Nhật Khu Vực Thành Công", Toast.LENGTH_SHORT).show();
                 }
-                else{Toast.makeText(Nha_Cung_Cap_Activity.this, "Không thể Cập Nhật Nhà Cung Cấp ", Toast.LENGTH_SHORT).show();
+                else{Toast.makeText(Khu_Vuc_Activity.this, "Không thể Cập Nhật Khu Vực ", Toast.LENGTH_SHORT).show();
                 }
                 hienThi();
                 Clear();
@@ -83,22 +79,22 @@ public class Nha_Cung_Cap_Activity extends AppCompatActivity {
         btnXoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                maNCC=edtMaNCC.getText().toString();
+                maKhu=edtMaKhu.getText().toString();
 
-                String sql = "DELETE FROM NHACUNGCAP WHERE MANCC = '"+maNCC+"'";
+                String sql = "DELETE FROM KHUVUC WHERE MAKV = '"+maKhu+"'";
                 if(doAction(sql)==true)
                 {
-                    Toast.makeText(Nha_Cung_Cap_Activity.this, "Xóa Nhà Cung Cấp Thành Công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Khu_Vuc_Activity.this, "Xóa Khu Vực Thành Công", Toast.LENGTH_SHORT).show();
                 }
-                else{Toast.makeText(Nha_Cung_Cap_Activity.this, "Không thể Xóa Nhà Cung Cấp ", Toast.LENGTH_SHORT).show();
+                else{Toast.makeText(Khu_Vuc_Activity.this, "Không thể Xóa Khu Vực ", Toast.LENGTH_SHORT).show();
                 }
                 hienThi();
                 Clear();
             }
         });
 
-
     }
+
     public boolean doAction(String sql) {
         try
         {
@@ -117,24 +113,23 @@ public class Nha_Cung_Cap_Activity extends AppCompatActivity {
     }
     public void Clear()
     {
-        edtMaNCC.setText("");
-        edtTenNCC.setText("");
-        edtsoDT.setText("");
+        edtMaKhu.setText("");
+        edtTenKhu.setText("");
     }
     public void hienThi()
     {
         list = new ArrayList();
-        String sql = "SELECT * FROM NHACUNGCAP";
+        String sql = "SELECT * FROM KHUVUC";
         database = openOrCreateDatabase(nameDB,MODE_PRIVATE,null);
         Cursor cursor = database.rawQuery(sql,null);
         if(cursor.moveToFirst()){
             do {
-                list.add(new libNhaCungCap(cursor.getString(0),cursor.getString(1),cursor.getString(2)));
+                list.add(new libKhuVuc(cursor.getString(0),cursor.getString(1)));
             }while (cursor.moveToNext());
         }
         database.close();
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,list);
-        listNCC.setAdapter(adapter);
+        listKV.setAdapter(adapter);
     }
 
 
